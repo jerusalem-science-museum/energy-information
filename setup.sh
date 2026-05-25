@@ -15,37 +15,6 @@ sudo apt-get update && sudo apt-get upgrade -y
 echo -e "\n---> Installing system utilities..."
 sudo apt-get install -y curl git build-essential
 
-# =================================================================
-# UNCOMMENT THE SECTION BELOW DEPENDING ON YOUR PROJECT'S LANGUAGE
-# =================================================================
-
-### --- FOR PYTHON PROJECTS --- ###
-# echo -e "\n---> Setting up Python Environment..."
-# sudo apt-get install -y python3 python3-pip python3-venv
-# if [ ! -d "venv" ]; then
-#     python3 -m venv venv
-# fi
-# source venv/bin/activate
-# if [ -f "requirements.txt" ]; then
-#     pip install --upgrade pip
-#     pip install -r requirements.txt
-# else
-#     echo "requirements.txt not found. Skipping pip install."
-# fi
-
-### --- FOR NODE.JS PROJECTS --- ###
-# echo -e "\n---> Setting up Node.js Environment..."
-# # Installs Node LTS via NodeSource
-# curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
-# sudo apt-get install -y nodejs
-# if [ -f "package.json" ]; then
-#     npm install
-# else
-#     echo "package.json not found. Skipping npm install."
-# fi
-
-# =================================================================
-
 # 3. Environment Configuration Setup
 echo -e "\n---> Setting up Environment Configurations..."
 if [ -f ".env.example" ] && [ ! -f ".env" ]; then
