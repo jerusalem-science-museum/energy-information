@@ -9,6 +9,14 @@ if ! command -v firefox &> /dev/null; then
     exit 1
 fi
 
+# --- NEW: Wait for active internet connection ---
+echo "Waiting for network connection..."
+while ! ping -c 1 -W 1 8.8.8.8 &>/dev/null; do
+    sleep 1
+done
+echo "Network is up! Launching Firefox..."
+# ------------------------------------------------
+
 # Enable touch mode by setting Firefox environment variables
 export MOZ_USE_XINPUT2=1
 
